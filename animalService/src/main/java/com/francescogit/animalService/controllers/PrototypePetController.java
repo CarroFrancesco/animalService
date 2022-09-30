@@ -1,19 +1,22 @@
 package com.francescogit.animalService.controllers;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 
 import com.francescogit.pets.PetService;
 
+
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Controller
-public class PetController {
+public class PrototypePetController {
 	
 		private PetService petService;
 		public int i;
 		
 			
-		public PetController(PetService petService) {
-			super();
+		public PrototypePetController(PetService petService) {
+			
 			this.petService = petService;
 		}
 
